@@ -11,10 +11,10 @@ import { login, register } from './controllers/auth.js';
 import auth from './middlewares/auth.js';
 import { validateLogin, validateRegister } from './middlewares/validation.js';
 import { requestLogger, errorLogger } from './middlewares/logger.js';
-import { limiter, corsOption, dbUrl } from './utils/constants.js';
+import { limiter, corsOption } from './utils/constants.js';
 import errorHandler from './middlewares/errorHandler.js';
 
-const { PORT = 3000, DB_URL = dbUrl } = process.env;
+const { PORT = 3000, DB_URL } = process.env;
 
 const app = express();
 app.use(express.json());
